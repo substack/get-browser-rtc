@@ -8,7 +8,7 @@ package for easy swapability between node and browsers.
 # example output
 
 ``` js
-console.log(require('get-browser-rtc'))
+console.log(require('get-browser-rtc')())
 ```
 
 If you're in a browser that supports webrtc you'll get:
