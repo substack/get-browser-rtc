@@ -3,11 +3,11 @@
 module.exports = function getBrowserRTC () {
   if (typeof window === 'undefined') return null
   var wrtc = {
-    RTCPeerConnection: window.mozRTCPeerConnection || window.RTCPeerConnection ||
+    RTCPeerConnection: window.RTCPeerConnection || window.mozRTCPeerConnection ||
       window.webkitRTCPeerConnection,
-    RTCSessionDescription: window.mozRTCSessionDescription ||
-      window.RTCSessionDescription || window.webkitRTCSessionDescription,
-    RTCIceCandidate: window.mozRTCIceCandidate || window.RTCIceCandidate ||
+    RTCSessionDescription: window.RTCSessionDescription ||
+      window.mozRTCSessionDescription || window.webkitRTCSessionDescription,
+    RTCIceCandidate: window.RTCIceCandidate || window.mozRTCIceCandidate ||
       window.webkitRTCIceCandidate
   }
   if (!wrtc.RTCPeerConnection) return null
