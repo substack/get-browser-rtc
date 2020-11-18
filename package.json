@@ -1,6 +1,6 @@
 {
   "name": "get-browser-rtc",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "get webrtc browser methods unprefixed",
   "main": "index.js",
   "scripts": {
