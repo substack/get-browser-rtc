@@ -12,7 +12,7 @@ var getGlobal = () =>
 function getBrowserRTC() {
   var GLOBAL = getGlobal()
 
-  if (GLOBAL) return null
+  if (!GLOBAL) return null
   var wrtc = {
     RTCPeerConnection:
       GLOBAL.RTCPeerConnection ||
