@@ -1,13 +1,14 @@
 // originally pulled out of simple-peer
 
-var getGlobal = () =>
-  typeof globalThis !== 'undefined'
+function getGlobal() {
+  return typeof globalThis !== 'undefined'
     ? globalThis
     : typeof window !== 'undefined'
     ? window
     : typeof global !== 'undefined'
     ? global
     : undefined
+}
 
 function getBrowserRTC() {
   var GLOBAL = getGlobal()
