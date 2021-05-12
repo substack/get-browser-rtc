@@ -1,14 +1,11 @@
 // originally pulled out of simple-peer
 
 module.exports = function getBrowserRTC () {
-  if (typeof globalThis === 'undefined') return null
+  const g = typeof globalThis === 'undefined' ? window : globalThis;
   var wrtc = {
-    RTCPeerConnection: globalThis.RTCPeerConnection || globalThis.mozRTCPeerConnection ||
-      globalThis.webkitRTCPeerConnection,
-    RTCSessionDescription: globalThis.RTCSessionDescription ||
-      globalThis.mozRTCSessionDescription || globalThis.webkitRTCSessionDescription,
-    RTCIceCandidate: globalThis.RTCIceCandidate || globalThis.mozRTCIceCandidate ||
-      globalThis.webkitRTCIceCandidate
+    RTCPeerConnection: g.RTCPeerConnection || g.mozRTCPeerConnection || g.webkitRTCPeerConnection,
+    RTCSessionDescription: g.RTCSessionDescription || g.mozRTCSessionDescription || g.webkitRTCSessionDescription,
+    RTCIceCandidate: g.RTCIceCandidate || g.mozRTCIceCandidate || g.webkitRTCIceCandidate
   }
   if (!wrtc.RTCPeerConnection) return null
   return wrtc
